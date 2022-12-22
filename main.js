@@ -1,45 +1,50 @@
-let user = 'John Doe';
-
-console.log(user);
-
-const student = 'Milena Ivanova';
-
-console.log(student);
-
-user = student;
-
-console.log(user); // expected output: 'Milena Ivanova'
-// -----------------------------------------------------------
-let test = 1;
-test++;
-
-console.log(test + '1'); // expected output: '21'
-console.log(test - 1); // expected output: 1
-
-test = Boolean(test); // expected output: true
-// test = !test; // expected output: false
-
-console.log(test);
-// -----------------------------------------------------------
-const arr = [2, 3, 5, 8];
-let result = 1;
-
-for (let i = 0; i < arr.length; i++) {
-  result *= arr[i];
-}
-
-console.log(result);
-// -----------------------------------------------------------
-const arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
-
-for (let i = 0; i < arr2.length; i++)
-  if (arr2[i] > 5 && arr2[i] < 10) {
-    console.log(arr2[i]);
+const palindrome = (string) => {
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== string[string.length - 1 - i]) {
+      return false;
+    }
   }
-// -----------------------------------------------------------
-const arr3 = [2, 5, 8, 15, 0, 6, 20, 3];
+  return true;
+};
 
-for (let i = 0; i < arr3.length; i++)
-  if (arr3[i] % 2 === 0) {
-    console.log(arr3[i]);
+palindrome('lol');
+//----------------------------------------------------
+const min = (a, b) => {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
   }
+};
+
+const minTernary = (a, b) => (a < b ? a : b);
+
+min(1, 4);
+minTernary(1, 4);
+
+const max = (a, b) => {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+};
+
+const maxTernary = (a, b) => (a > b ? a : b);
+
+max(1, 4);
+maxTernary(1, 4);
+//----------------------------------------------------
+const array = [0, 2, 3, 4, 5, 10, 20, 30, 40, 100];
+
+const zero = (theArgs) => {
+  for (let i = 0; i < theArgs.length; i++) {
+    const name = String(theArgs[i]);
+    if (name.includes('0')) {
+      theArgs[i] = name.replaceAll('0', 'zero');
+    }
+  }
+  return theArgs;
+};
+
+zero(array);

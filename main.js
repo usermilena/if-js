@@ -35,7 +35,11 @@ const maxTernary = (a, b) => (a > b ? a : b);
 max(1, 4);
 maxTernary(1, 4);
 //----------------------------------------------------
-const array = [0, 2, 3, 4, 5, 10, 20, 30, 40, 100];
+const randomArray = (length, max) => {
+  return Array.apply(null, Array(length)).map(function () {
+    return Math.round(Math.random() * max);
+  });
+};
 
 const zero = (theArgs) => {
   for (let i = 0; i < theArgs.length; i++) {
@@ -47,4 +51,4 @@ const zero = (theArgs) => {
   return theArgs;
 };
 
-zero(array);
+zero(randomArray(10, 101));
